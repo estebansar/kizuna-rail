@@ -6,3 +6,11 @@ main {
         padding: var(--space-2xl) var(--space-lg);
     }
 }
+
+#filters {
+    display: grid;
+    grid-template-columns: auto 1fr auto 1fr;
+    align-items: center;
+    column-gap: var(--space-md);
+    row-gap: var(--space-sm);
+}
