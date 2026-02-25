@@ -406,14 +406,63 @@ article.confirmation-page {
 }
 
 @media print {
-    article.confirmation-page {
-        .confirmation-actions {
-            display: none;
-        }
+    /* hide site chrome */
+    header,
+    nav,
+    footer {
+        display: none !important;
+    }
 
-        .confirmation-header {
-            background-color: white;
-            border: 2px solid var(--clr-primary);
-        }
+    /* hide buttons + extra sections */
+    .confirmation-actions,
+    .next-steps {
+        display: none !important;
+    }
+
+    /* remove spacing that causes extra pages */
+    main {
+        padding: 0 !important;
+    }
+
+    article.confirmation-page {
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .confirmation-header {
+        background: white !important;
+        margin-bottom: 12px !important;
+        padding: 12px !important;
+        border: 2px solid var(--clr-primary) !important;
+        box-shadow: none !important;
+    }
+
+    /* remove shadows everywhere */
+    .detail-card,
+    .passenger-info-card,
+    .important-info,
+    .booking-reference,
+    .success-icon svg {
+        box-shadow: none !important;
+        filter: none !important;
+    }
+
+    /* tighten vertical spacing */
+    .confirmation-content {
+        gap: 12px !important;
+    }
+
+    .section-title {
+        margin: 0 0 8px 0 !important;
+        padding-bottom: 6px !important;
+    }
+
+    /* avoid awkward page breaks */
+    .booking-details,
+    .passengers-info,
+    .important-info {
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
     }
 }
